@@ -17,7 +17,7 @@ var httpServer = http.createServer(function(req, res){
 
 httpServer.listen(3001);
 
-var db = mongoose.connect('mongodb://localhost/sasapi');
+var db = mongoose.connect('mongodb://asle:123abc@ds045001.mlab.com:45001/heroku_mr6gw1n8');//('mongodb://localhost/sasapi');
 
 var article = require('./models/article');
 
