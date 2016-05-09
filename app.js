@@ -73,6 +73,9 @@ sasRouter.route('/articles')
         if(req.query.category){
             filter.category = req.query.category
         }
+        if(req.query.score){
+            filter.score = req.query.score
+        }
          article.find(filter, function(err, articles){
          if(err){
          res.status(500).send(err);
