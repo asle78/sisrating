@@ -70,6 +70,9 @@ sasRouter.route('/articles')
         if(req.query.author){
             filter.author = req.query.author;
         }
+        if(req.query.category){
+            filter.category = req.query.category
+        }
          article.find(filter, function(err, articles){
          if(err){
          res.status(500).send(err);
