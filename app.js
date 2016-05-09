@@ -21,7 +21,7 @@ var db = mongoose.connect('mongodb://localhost/sasapi');
 
 var article = require('./models/article');
 
-const port = 3000;
+var port = Number(process.env.PORT || 3000);
 var app = express();
 
 var testValue = 4;
