@@ -38,10 +38,10 @@ function loadData() {
                 "title": array[0],
                 "year": array[1],
                 "category": array[2],
-                "author": array[3],
-                "abstract": array[4],
-                "score": array[5],
-                "publisher": array[6]
+                "author": array[4],
+                "abstract": array[5],
+                "score": array[6],
+                "publisher": array[3]
             });
             newArticle.save();
         })
