@@ -164,7 +164,7 @@ sasRouter.route('/graphs2')
         })
     });
 
-sasRouter.route('/graphs2')
+sasRouter.route('/graphs3')
     .get(function(req, res){
         fs.readFile("./graphs/graph3.html", "UTF-8", function(err, html){
             res.writeHead(200, {"Content-Type" : "text/html"});
