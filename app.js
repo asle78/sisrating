@@ -27,7 +27,7 @@ var app = express();
 var testValue = 4;
 
 function loadData() {
-    var reader = fs.createReadStream("./CSV/exportArticleValue2.csv")
+    var reader = fs.createReadStream("./CSV/csvFinal.csv")
 
     csv
         .fromPath("./CSV/exportapp2.csv", {delimiter: "|"})
