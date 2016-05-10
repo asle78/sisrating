@@ -49,7 +49,7 @@ function loadData() {
             console.log("file ended")
         });
 }
-
+var test = "HEI";
 
 app.use(bodyParser.json());
 var sasRouter = express.Router();
