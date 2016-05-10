@@ -156,6 +156,21 @@ sasRouter.route('/graphs')
        })
     });
 
+sasRouter.route('/graphs2')
+    .get(function(req, res){
+        fs.readFile("./graphs/graph2.html", "UTF-8", function(err, html){
+            res.writeHead(200, {"Content-Type" : "text/html"});
+            res.end(html);
+        })
+    });
+
+sasRouter.route('/graphs2')
+    .get(function(req, res){
+        fs.readFile("./graphs/graph3.html", "UTF-8", function(err, html){
+            res.writeHead(200, {"Content-Type" : "text/html"});
+            res.end(html);
+        })
+    });
 
 app.get('/', function(req, res){
     res.send("Welkome to SAS API");

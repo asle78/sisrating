@@ -1,0 +1,48 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<body style="background-color: #E6EBF0;">
+<div id="chart_div" style="background-color: #2C475F;"></div>
+</body>
+<script type="text/javascript">
+
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Element", "Density", { role: "style" } ],
+            ["Lancet", 48.94, "#2C475F"],
+            ["Archives Of Internal Medicine", 10.49, "#2C475F"],
+            ["Annals Of Internal Medicine", 19.30, "#2C475F"],
+            ["Annals Of Family Medicine", 1.30, "#2C475F"],
+            ["The American Journal Of Medicine", 7.30, "#2C475F"],
+            ["Swiss Medical Weekly", 29.30, "#2C475F"],
+            ["Hippokratia", 38.30, "#2C475F"],
+            ["Jama Internal Medicine", 21.45, "color: #2C475F"]
+        ]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+            { calc: "stringify",
+                sourceColumn: 1,
+                type: "string",
+                role: "annotation" },
+            2]);
+
+        var options = {
+            title: "Journal Impact Factor",
+            width: 600,
+            height: 400,
+            bar: {groupWidth: "85%"},
+            legend: { position: "none" },
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+        chart.draw(view, options);
+    }
+
+
+
+
+
+
+
+</script>
+<div id="columnchart_values" style="width: 1080px; height: 360px;"></div>

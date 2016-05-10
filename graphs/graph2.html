@@ -1,0 +1,88 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<body style="background-color: #E6EBF0;">
+<div id="chart_div" style="background-color: #2C475F;"></div>
+</body>
+<script type="text/javascript">
+
+    google.charts.load('current', {packages: ['corechart', 'line']});
+    google.charts.setOnLoadCallback(drawBasic);
+
+
+
+    function drawBasic() {
+
+
+        var data = new google.visualization.DataTable();
+        //Denne formaterer årstallet som dukker opp ved click og hover
+        var formatter = new google.visualization.NumberFormat({
+            pattern: '####'
+        });
+
+
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'SiS rating');
+
+        data.addRows([
+            [2010, 23.1],   [2011, 23.8],  [2012, 25.2],  [2013, 39.1],  [2014, 35.2],  [2015, 30],
+            [2016, 29]
+
+        ]);
+        //Vi legger formateren til første kolonne
+        formatter.format(data, 0);
+
+
+        var options = {
+            'title': 'SiS rating over time',
+            'titleFontSize': '24',
+            'titleColor' : '#000',
+            'titlePosition' : 'out',
+            'height': '360',
+
+            'legend':{'position': 'bottom',
+                'textStyle': {'color': '#000'},
+            },
+            'pointSize': '12',
+            'pointShape': 'circle',
+            'backgroundColor': '#E6EBF0',
+            'animation': {
+                'startup': 'true',
+                'duration': 2000,
+                'easing': 'out',
+
+            },
+            //graf color
+            colors: ['#2C475F'],
+            hAxis: {
+                textStyle: {
+                    color: '#000'
+                },
+                titleTextStyle: {
+                    color: 'black'
+                },
+                title: 'Time',
+                format: '0',
+            },
+            vAxis: {
+                textStyle: {
+                    color: '#000'
+                },
+                titleTextStyle: {
+                    color: 'black'
+                },
+                title: 'SiS Rating',
+                format: '0'
+            }
+
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+    }
+
+
+
+
+
+
+</script>
