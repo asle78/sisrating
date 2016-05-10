@@ -17,7 +17,7 @@ var httpServer = http.createServer(function(req, res){
 
 httpServer.listen(3001);
 
-var db = mongoose.connect('mongodb://asle:123abc@ds045001.mlab.com:45001/heroku_mr6gw1n8');//('mongodb://localhost/sasapi');
+var db = mongoose.connect('mongodb://asle:mongo123@ds043605.mlab.com:43605/heroku_99v0rnx0');//('mongodb://localhost/sasapi');
 
 var article = require('./models/article');
 
@@ -30,7 +30,7 @@ function loadData() {
     var reader = fs.createReadStream("./CSV/exportArticleValue2.csv")
 
     csv
-        .fromPath("./CSV/csv.csv", {delimiter: "|"})
+        .fromPath("./CSV/exportapp2.csv", {delimiter: "|"})
         .on('data', function (data) {
 
             var array = data;
@@ -41,7 +41,7 @@ function loadData() {
                 "author": array[3],
                 "abstract": array[4],
                 "score": array[5],
-                "article": array[6]
+                "publisher": array[6]
             });
             newArticle.save();
         })
@@ -99,8 +99,8 @@ sasRouter.route('/articles')
                      "year" : art.year,
                      "score" : art.score,
                      "abstract" : art.abstract,
+                    "publisher" : art.publisher
 
-                     "article" : art.article
                  });
 
              }
