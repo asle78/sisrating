@@ -29,10 +29,11 @@
 
         var options = {
             title: "Journal Impact Factor",
-            width: 600,
-            height: 400,
+
+            height: 380,
             bar: {groupWidth: "85%"},
             legend: { position: "none" },
+            backgroundColor: '#E6EBF0'
         };
         var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
         chart.draw(view, options);
@@ -45,4 +46,4 @@
 
 
 </script>
-<div id="columnchart_values" style="width: 1080px; height: 360px;"></div>
+<div id="columnchart_values" style="background-color: #E6EBF0;"></div>
